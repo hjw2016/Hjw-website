@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="top-bar">这里放title</div>
+    <div class="nav">zheli shi menu </div>
     <router-view></router-view>
   </div>
 </template>
@@ -18,6 +19,17 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+.top-bar{
+  width:100%;
+  height:30px;
+  background:#456;
+  color:white;
+}
+.nav{
+  width:260px;
+  height:100%;
+  background:#efc;
+  float:left;
 }
 </style>
