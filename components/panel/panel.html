@@ -1,0 +1,29 @@
+<div v-show="show"
+    :class="{
+        'panel': true,
+        'panel-default': type == 'default',
+        'panel-primary': type == 'primary',
+        'panel-info': type == 'info',
+        'panel-warning': type == 'warning',
+        'panel-danger': type == 'danger'
+    }"
+    transition="fade"
+>
+    <div v-el:panel-header class="panel-heading">
+        <button class="close" type="button" v-if="dismissable" @click="close">
+            <span>&times;</span>
+        </button>
+        <h4 class="panel-title" :style="{textAlign: halign}">
+            <a class="accordion-toggle" @click="toggleOpen">
+                <slot name="header">
+                    {{header}}
+                </slot>
+            </a>
+        </h4>
+    </div>
+    <div class="panel-collapse" v-el:panel v-show="isOpen" transition="collapse">
+        <div class="panel-body" :style="{'height': bodyHeight}">
+            <slot></slot>
+        </div>
+    </div>
+</div>

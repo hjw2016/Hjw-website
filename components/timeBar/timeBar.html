@@ -1,0 +1,56 @@
+<div>
+    <ul class="list-inline" style="position: relative; margin-bottom: 0;">
+        <popover v-ref:popover title="自定义时间段">
+            <li slot="trigger" @click="activeIndex = -1" :class="{active: activeIndex === -1}">自定义</li>
+            <form class="form-horizontal">
+                <fieldset class="form-group-sm">
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-4" style="padding-left: 0;">
+                            <radio-group :value.sync="customTimeMode" class="btn-group-sm">
+                                <radio-btn value="day" checked>按日</radio-btn>
+                                <radio-btn value="hour">按时</radio-btn>
+                            </radio-group>
+                        </div>
+                    </div>
+                    <div class="form-group" v-show="customTimeMode === 'day'">
+                        <label for="day-start-tm" class="col-sm-4 control-label">开始：</label>
+                        <div class="col-sm-8" style="padding-left:0;">
+                            <input v-datetimepicker="start" :end="end" type="text" class="form-control" id="day-start-tm">
+                        </div>
+                    </div>
+                    <div class="form-group" v-show="customTimeMode === 'day'">
+                        <label for="day-end-tm" class="col-sm-4 control-label">结束：</label>
+                        <div class="col-sm-8" style="padding-left:0;">
+                            <input v-datetimepicker="end" :start="start" type="text" class="form-control" id="day-end-tm">
+                        </div>
+                    </div>
+                    <div class="form-group" v-show="customTimeMode === 'hour'">
+                        <label for="hour-start-tm" class="col-sm-4 control-label">开始：</label>
+                        <div class="col-sm-8" style="padding-left:0;">
+                            <input v-datetimepicker="start" :end="end" :min-view="1" format="yyyy-mm-dd hh:ii" type="text" class="form-control" id="hour-start-tm">
+                        </div>
+                    </div>
+                    <div class="form-group" v-show="customTimeMode === 'hour'">
+                        <label for="hour-end-tm" class="col-sm-4 control-label">结束：</label>
+                        <div class="col-sm-8" style="padding-left:0;">
+                            <input v-datetimepicker="end" :start="start" :min-view="1" format="yyyy-mm-dd hh:ii" type="text" class="form-control" id="hour-end-tm">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-8 col-sm-offset-4" style="padding-left:0;">
+                            <button class="btn btn-primary btn-sm" type="button" @click="handleConfirmClick">
+                                <i class="glyphicon glyphicon-ok"></i>确定
+                            </button>
+                            <button class="btn btn-default btn-sm" type="button" @click="handleCancelClick">
+                                <i class="glyphicon glyphicon-remove"></i>取消
+                            </button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </popover>
+        <li v-for="shortcut in shortcuts" @click="handleShortcutClick($index)" :class="{active: activeIndex === $index}">
+            {{shortcut.name}}
+        </li>
+    </ul>
+</div>

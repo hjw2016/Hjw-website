@@ -1,0 +1,38 @@
+.screen-tile{
+    position: relative;
+    background: url("../../img/tile-bg.png");
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+
+.screen-tile .tile-header {
+    overflow: hidden;
+}
+.screen-tile .tile-title {
+    color: burlywood;
+    font-weight: bold;
+}
+.screen-tile .tile-content {
+    padding: 10px;
+    overflow: auto;
+}
+.screen-tile .tile-content iframe {
+    display: block;
+}
+.screen-tile .tile-close {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    font-size: 24px;
+    line-height: 1;
+    color: #000;
+    text-shadow: 0 1px 0 #fff;
+    cursor: pointer;
+    opacity: 0;
+    -webkit-transition: opacity 150ms ease;
+    -moz-transition: opacity 150ms ease;
+    transition: opacity 150ms ease;
+}
+.screen-tile:hover .tile-close {
+    opacity: 1;
+}

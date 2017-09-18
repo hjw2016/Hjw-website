@@ -1,0 +1,90 @@
+  .aside {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1049;
+      overflow: auto;
+      background: #fff;
+  }
+  .aside.left {
+    left: 0;
+    right: auto;
+    border-right: 1px solid #ccc;
+  }
+  .aside.right {
+    left: auto;
+    right: 0;
+    border-left: 1px solid #ccc;
+  }
+
+  .slideleft-enter {
+    animation:slideleft-in .3s;
+  }
+  .slideleft-leave {
+    animation:slideleft-out .3s;
+  }
+  @keyframes slideleft-in {
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideleft-out {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+  }
+  .slideright-enter {
+    animation:slideright-in .3s;
+  }
+  .slideright-leave {
+    animation:slideright-out .3s;
+  }
+  @keyframes slideright-in {
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideright-out {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }
+
+  .aside .aside-dialog .aside-header {
+      border-bottom: 1px solid #e5e5e5;
+      padding: 2px 15px;
+      background: #5bc0de;
+      color: #fff;
+  }
+
+  .aside .aside-dialog .aside-header .close {
+      padding: 4px;
+      color: #fff;
+      font-size: 25px;
+      opacity: .8;
+  }
+
+  .aside .aside-dialog .aside-body {
+      position: relative;
+      overflow: auto;
+  }

@@ -1,0 +1,103 @@
+.vue-select {
+    position: relative;
+  }
+
+ .vue-select.open .dropdown-toggle,
+ .vue-select.open .dropdown-menu {
+    border-color: rgba(60,60,60,.26);
+  }
+
+ .vue-select .open-indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    cursor: pointer;
+    pointer-events: all;
+    transition: all 150ms cubic-bezier(1.000, -0.115, 0.975, 0.855);
+    transition-timing-function: cubic-bezier(1.000, -0.115, 0.975, 0.855);
+  }
+
+  .vue-select.open .open-indicator {
+    transform: rotate(180deg);
+  }
+
+  .vue-select .dropdown-toggle {
+    display: block;
+    padding: 0;
+    background: none;
+    border: 1px solid rgba(60,60,60,.26);
+    border-radius: 4px;
+    white-space: normal;
+  }
+  .vue-select.searchable .dropdown-toggle {
+    cursor: text;
+  }
+
+  .vue-select.open .dropdown-toggle {
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+
+  .vue-select .dropdown-menu {
+    margin: 0;
+    width: 100%;
+    overflow-y: auto;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+
+  .vue-select .selected-tag {
+    color: #333;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    height: 26px;
+    margin: 4px 1px 0px 3px;
+    padding: 0 0.25em;
+    float: left;
+    line-height: 1.7em;
+  }
+
+  .vue-select .selected-tag .close {
+    float: none;
+    margin-right: 0;
+    font-size: 20px;
+  }
+
+ .vue-select input[type=search],
+ .vue-select input[type=search]:focus {
+    display: inline-block;
+    border: none;
+    outline: none;
+    margin: 0;
+    padding: 0 .5em;
+    width: 10em;
+    max-width: 100%;
+    background: none;
+    position: relative;
+    box-shadow: none;
+    float: left;
+    clear: none;
+  }
+
+  .vue-select input[type=search]:disabled {
+    cursor: pointer;
+  }
+
+  .vue-select li a {
+    cursor: pointer;
+  }
+
+  .vue-select .active a {
+    background: rgba(50,50,50,.1);
+    color: #333;
+  }
+
+  .vue-select .highlight a,
+  .vue-select li:hover > a {
+    background: #f0f0f0;
+    color: #333;
+  }

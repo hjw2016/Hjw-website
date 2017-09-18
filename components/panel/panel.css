@@ -1,0 +1,29 @@
+.accordion-toggle,
+.accordion-toggle:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.panel-body {
+    position: relative;
+    padding: 0;
+}
+.fade-transition {
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
+.fade-enter,
+.fade-leave {
+    opacity: 0;
+}
+.collapse-transition {
+    -webkit-transition: max-height .5s ease;
+    -moz-transition: max-height .5s ease;
+    transition: max-height .5s ease;
+    overflow: hidden;
+}
+.collapse-enter,
+.collapse-leave {
+    max-height: 0 !important;
+}

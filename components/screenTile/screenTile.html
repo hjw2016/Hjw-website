@@ -1,0 +1,15 @@
+<div v-show="show" class="screen-tile">
+    <div v-el:tile-header class="tile-header text-center">
+        <h4 class="tile-title">
+            <slot name="header">
+                {{header}}
+            </slot>
+        </h4>
+    </div>
+    <div class="tile-content" :style="{height: contentHeight + 'px'}">
+        <slot></slot>
+    </div>
+    <div class="tile-close" title="关闭" @click="close">
+        <span>&times;</span>
+    </div>
+</div>

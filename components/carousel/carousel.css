@@ -1,0 +1,38 @@
+.carousel.vertical .carousel-indicators {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    left: auto;
+    margin-left: 0;
+    width: auto;
+    bottom: auto;
+}
+
+.carousel.vertical .carousel-indicators li {
+    display: block;
+    width: 25px;
+    height: 25px;
+    margin: 5px 1px;
+    border: none;
+    border-radius: 0;
+    background: url("../../img/home.png") center center no-repeat;
+    background-size: cover;
+}
+
+.carousel.vertical .carousel-indicators li + li{
+    background: url("../../img/org.png") center center no-repeat;
+    background-size: cover;
+}
+
+.carousel.vertical .carousel-indicators .active {
+    width: 28px;
+    height: 28px;
+}
+
+.carousel.vertical .carousel-inner {
+    height: 100%;
+}
+
+.carousel.vertical .item {
+    left: 0;
+}

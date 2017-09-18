@@ -1,0 +1,37 @@
+<template>
+  <div id="app">
+    <div class="top-bar">Node and Vue StudyProject</div>
+    <div class="nav">Menu</div> 
+    <router-view></router-view>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'app'
+}
+</script>
+
+<style>
+#app {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+}
+.top-bar{
+  width:100%;
+  height:30px;
+  background:#456;
+  color:white;
+  font-size: 18px;
+  line-height: 30px;
+}
+.nav{
+  width:260px;
+  height:500px;
+  background:#efc;
+  float:left;
+}
+</style>

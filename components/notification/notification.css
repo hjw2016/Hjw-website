@@ -1,0 +1,165 @@
+.notification-container {
+    position: fixed;
+    width: 100%;
+    top: 50%;
+    margin-top: -25px;
+    z-index: 10000;
+}
+
+.notification-container .content {
+    position: absolute;
+    left: 50%;
+    opacity: 1;
+    visibility: visible;
+    vertical-align: middle;
+    transform: translate3d(0, -100%, 0);
+    -webkit-transition: all 100ms cubic-bezier(0, .56, 0, 1.4) 0;
+    -moz-transition: all 100ms cubic-bezier(0, .56, 0, 1.4) 0;
+    transition: all 100ms cubic-bezier(0, .56, 0, 1.4) 0;
+}
+
+.notification-container .content-body {
+    position: relative;
+    right: 50%;
+}
+
+.animation {
+    animation-fill-mode: both;
+    animation-play-state: running;
+    animation-delay: 0;
+    animation-timing-function: ease;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    -webkit-animation-play-state: running;
+    -webkit-animation-delay: 0;
+    -webkit-animation-timing-function: ease;
+    -webkit-animation-duration: .5s;
+    -moz-animation-fill-mode: both;
+    -moz-animation-play-state: running;
+    -moz-animation-delay: 0;
+    -moz-animation-timing-function: ease;
+    -moz-animation-duration: .5s;
+    -ms-animation-fill-mode: both;
+    -ms-animation-play-state: running;
+    -ms-animation-delay: 0;
+    -ms-animation-timing-function: ease;
+    -ms-animation-duration: .5s;
+}
+
+.slide-in-down {
+    animation-name: slideInDown;
+    -webkit-animation-name: slideInDown;
+    -moz-animation-name: slideInDown;
+    -ms-animation-name: slideInDown;
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@-webkit-keyframes slideInDown {
+    from {
+        -webkit-transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        -webkit-transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@-moz-keyframes slideInDown {
+    from {
+        -moz-transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        -moz-transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+@-ms-keyframes slideInDown {
+    from {
+        -ms-transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        -ms-transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.slide-out-down {
+    animation-name: slideOutDown;
+    -webkit-animation-name: slideOutDown;
+    -moz-animation-name: slideOutDown;
+    -ms-animation-name: slideOutDown;
+}
+
+@keyframes slideOutDown {
+    from {
+        transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes slideOutDown {
+    from {
+        -webkit-transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        -webkit-transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-moz-keyframes slideOutDown {
+    from {
+        -moz-transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        -moz-transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@-ms-keyframes slideOutDown {
+    from {
+        -ms-transform: translate(0, 22%);
+        opacity: 1;
+        visibility: visible;
+    }
+    to {
+        -ms-transform: translate(0, -100%);
+        opacity: 0;
+        visibility: hidden;
+    }
+}

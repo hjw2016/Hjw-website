@@ -1,0 +1,475 @@
+.bar-container .col-main {
+    float: left;
+    width: 100%;
+    height: 80px;
+}
+.bar-container .inner-container {
+    position: relative;
+    height: 100%;
+    margin-right: 80px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.bar-container .col-side {
+    float: left;
+    margin-left: -70px;
+}
+.bar-container .inner-container > ul {
+    position: absolute;
+    left: 0;
+    width: auto;
+    margin-bottom: 0;
+    -webkit-transition: left 1s ease;
+    -moz-transition: left 1s ease;
+    transition: left 1s ease;
+}
+.bar-container .inner-container > ul > li {
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: default;
+}
+.bar-container .shortcut-icon {
+    display: block;
+    width: 60px;
+    height: 60px;
+    background: url("../../img/shortcuts.png") no-repeat;
+    background-position: -10px -10px;
+    cursor: pointer;
+}
+.bar-container .bar-control {
+    position: absolute;
+    z-index: 3;
+    width: 20px;
+    height: 80px;
+    top: 50%;
+    margin-top: -40px;
+    padding-top: 30px;
+    color: #d2d2d2;
+    background: rgba(204, 204, 204, .3);
+    text-align: center;
+    -webkit-transition: background-color .2s ease;
+    -moz-transition: background-color .2s ease;
+    transition: background-color .2s ease;
+}
+.bar-container li.shortcut:hover span {
+    text-decoration: underline;
+}
+.bar-container .bar-control:hover {
+    background-color: #ccc;
+    color: #fff;
+}
+.bar-container .prev-arrow {
+    left: 0;
+}
+.bar-container .next-arrow {
+    right: 0;
+}
+.bar-container .col-side .btn {
+    width: 60px;
+    height: 60px;
+    padding-top: 14px;
+    border-radius: 10px;
+    font-size: 24px;
+}
+
+.plugin-setting-modal input[type=checkbox]{
+    display: none;
+}
+.plugin-setting-modal input[type=checkbox] + label {
+    position: relative;
+    display: block;
+    height: 60px;
+    width: 60px;  
+    cursor: pointer;
+}
+.plugin-setting-modal .shortcut-container input[type=checkbox] + label {
+    background: url("../../img/shortcuts.png") no-repeat;
+    background-position: -10px -10px;
+}
+.plugin-setting-modal .plugin-container input[type=checkbox] + label {
+    background: url("../../img/plugins.png") no-repeat;
+    background-position: -5px -5px;
+}
+.plugin-setting-modal input[type=checkbox]:checked + label:after {
+    content: "\2714";
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    font-size: 18px;
+    line-height: 1;
+    height: 1em;
+    color: #F00;
+}
+.plugin-setting-modal .shortcut-container {
+    float: left;
+	width: 100%;
+}
+.plugin-setting-modal .shortcut-category {
+    float:  left;
+    width: 105px;
+	margin-left: -100%;
+    padding-left: 15px;
+}
+.plugin-setting-modal .shortcut-inner-container {
+    position: relative;
+	margin-left: 140px;
+    height: 330px;
+    overflow: auto;
+}
+.plugin-setting-modal .list-group-item {
+    cursor: pointer;
+}
+
+.bar-container .shortcut span,
+.plugin-setting-modal .shortcut-inner-container span{
+    display: block;
+    width: 60px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* 菜单图标 */
+/*综合监控*/
+.shortcut-contour {
+	background-position: -10px -10px !important;
+}
+.shortcut-flood-grade {
+	background-position: -10px -80px !important;
+}
+.shortcut-floodgate-engineering {
+	background-position: -10px -150px !important;
+}
+.shortcut-flow {
+	background-position: -10px -220px !important;
+}
+.shortcut-forecast {
+	background-position: -10px -290px !important;
+}
+.shortcut-point-rain {
+	background-position: -10px -360px !important;
+}
+.shortcut-project-danger {
+	background-position: -10px -430px !important;
+}
+.shortcut-radar {
+	background-position: -10px -500px !important;
+}
+.shortcut-rain-situation {
+	background-position: -10px -570px !important;
+}
+.shortcut-reservoir {
+	background-position: -10px -640px !important;
+}
+.shortcut-reservoir-flood-bearing {
+	background-position: -10px -710px !important;
+}
+.shortcut-reservoir-water {
+	background-position: -10px -780px !important;
+}
+.shortcut-river-water {
+	background-position: -10px -850px !important;
+}
+.shortcut-satellite {
+	background-position: -10px -920px !important;
+}
+.shortcut-shortdated-rain {
+	background-position: -10px -990px !important;
+}
+.shortcut-tide {
+	background-position: -10px -1060px !important;
+}
+.shortcut-typhoon {
+	background-position: -10px -1130px !important;
+}
+.shortcut-video-monitor {
+	background-position: -90px -1200px !important;
+}
+.shortcut-video-wall {
+	background-position: -90px -1060px !important;
+}
+.shortcut-sl-video {
+	background-position: -10px -1200px !important;
+}
+/*协同办公*/
+.shortcut-address-query {
+	background-position: -90px -10px !important;
+}
+.shortcut-document-query {
+	background-position: -90px -80px !important;
+}
+.shortcut-drought-organization-query {
+	background-position: -90px -150px !important;
+}
+.shortcut-knowledge-query {
+	background-position: -90px -220px !important;
+}
+.shortcut-material-query {
+	background-position: -90px -290px !important;
+}
+.shortcut-organization-query {
+	background-position: -90px -360px !important;
+}
+.shortcut-preplan-query {
+	background-position: -90px -430px !important;
+}
+.shortcut-rescue-team-query {
+	background-position: -90px -500px !important;
+}
+.shortcut-responsible-person-query {
+	background-position: -90px -570px !important;
+}
+.shortcut-rescue-data-query {
+	background-position: -90px -780px !important;
+}
+
+/*应急值守*/
+.shortcut-duty-message-send {
+	background-position: -170px -10px !important;
+}
+.shortcut-duty-manage {
+	background-position: -170px -80px !important;
+}
+.shortcut-floodduty {
+	background-position: -170px -150px !important;
+}
+/*调度会商*/
+.shortcut-different-place {
+	background-position: -90px -640px !important;
+}
+.shortcut-consult-prepare {
+	background-position: -250px -10px !important;
+}
+.shortcut-dispatch-release {
+	background-position: -250px -80px !important;
+}
+.shortcut-expert-manage {
+	background-position: -250px -150px !important;
+}
+.shortcut-response-publish {
+	background-position: -250px -220px !important;
+}
+.shortcut-workgroup-manage {
+	background-position: -250px -290px !important;
+}
+/*查询分析*/
+.shortcut-agricultural-drought-statistics {
+	background-position: -330px -10px !important;
+}
+.shortcut-day-period-rain {
+	background-position: -330px -80px !important;
+}
+.shortcut-day-period-water {
+	background-position: -330px -150px !important;
+}
+.shortcut-project-statistics {
+	background-position: -330px -220px !important;
+}
+.shortcut-project-reservoir-statistics {
+	background-position: -90px -920px !important;
+}
+.shortcut-project-pumping-statistics {
+	background-position: -90px -850px !important;
+}
+.shortcut-flood-control-project-statistic {
+	background-position: -330px -290px !important;
+}
+.shortcut-flood-disaster-statistics {
+	background-position: -330px -360px !important;
+}
+.shortcut-flood-season-rain {
+	background-position: -330px -430px !important;
+}
+.shortcut-hour-period-rain {
+	background-position: -330px -500px !important;
+}
+.shortcut-month-period-rain {
+	background-position: -330px -570px !important;
+}
+.shortcut-project-operate-statistics {
+	background-position: -330px -640px !important;
+}
+.shortcut-reservoir-storage-statistics {
+	background-position: -330px -710px !important;
+}
+.shortcut-urban-drought-statistics {
+	background-position: -330px -780px !important;
+}
+.shortcut-year-period-rain {
+	background-position: -330px -850px !important;
+}
+.shortcut-economy-statistics {
+	background-position: -490px -850px !important;
+}
+/*洪灾评估*/
+.shortcut-anomaly-analysis {
+	background-position: -410px -10px !important;
+}
+.shortcut-bulletin-inquiry {
+	background-position: -410px -80px !important;
+}
+.shortcut-flood-assessment {
+	background-position: -410px -150px !important;
+}
+.shortcut-flood-assessment-report {
+	background-position: -410px -220px !important;
+}
+.shortcut-flood-assessment-report-manage {
+	background-position: -410px -290px !important;
+}
+.shortcut-flood-assessment-statistics {
+	background-position: -410px -360px !important;
+}
+.shortcut-flood-risk-query {
+	background-position: -410px -430px !important;
+}
+.shortcut-quarter-analysis {
+	background-position: -410px -500px !important;
+}
+.shortcut-report-query {
+	background-position: -410px -570px !important;
+}
+.shortcut-result-data-presentation {
+	background-position: -410px -640px !important;
+}
+.shortcut-tennis-analysis {
+	background-position: -410px -710px !important;
+}
+.shortcut-year-flood-assessment {
+	background-position: -410px -780px !important;
+}
+
+/*抗旱业务*/
+.shortcut-agricultural-drought-assessment {
+    background-position: -490px -10px !important;
+}
+.shortcut-agricultural-drought-monitor {
+    background-position: -490px -80px !important;
+}
+.shortcut-agriculture-drought-disaster-assessment {
+    background-position: -490px -150px !important;
+}
+.shortcut-city-drought-disaster-assessment {
+    background-position: -490px -220px !important;
+}
+.shortcut-drinking-water-difficulty {
+    background-position: -490px -290px !important;
+}
+.shortcut-drinking-water-difficulty-assessment {
+    background-position: -490px -360px !important;
+}
+.shortcut-drought-capacity-material {
+    background-position: -490px -430px !important;
+}
+.shortcut-drought-capacity-planning {
+    background-position: -490px -500px !important;
+}
+.shortcut-drought-capacity-team {
+    background-position: -490px -570px !important;
+}
+.shortcut-drought-command-dispatch {
+    background-position: -490px -640px !important;
+}
+.shortcut-drought-file {
+    background-position: -490px -710px !important;
+}
+.shortcut-drought-frequency {
+    background-position: -490px -780px !important;
+}
+.shortcut-drought-general-info {
+    background-position: -490px -850px !important;
+}
+.shortcut-drought-loss {
+    background-position: -490px -920px !important;
+}
+.shortcut-drought-resisting-benefit {
+    background-position: -490px -990px !important;
+}
+.shortcut-drought-transfer-solution {
+    background-position: -490px -1060px !important;
+}
+.shortcut-drought-warn {
+    background-position: -490px -1130px !important;
+}
+.shortcut-drought-waterstatistics {
+    background-position: -490px -1200px !important;
+}
+.shortcut-general-drought-assessment {
+    background-position: -490px -1270px !important;
+}
+.shortcut-general-drought-disaster-assessment {
+    background-position: -490px -1340px !important;
+}
+.shortcut-herding-drought-monitor {
+    background-position: -490px -1410px !important;
+}
+.shortcut-map-operate {
+    background-position: -490px -1480px !important;
+}
+.shortcut-rain-temperature-forecast {
+    background-position: -490px -1550px !important;
+}
+.shortcut-similar-year-analysis {
+    background-position: -490px -1620px !important;
+}
+.shortcut-urban-drought-assessment {
+    background-position: -490px -1690px !important;
+}
+.shortcut-urban-drought-monitor {
+    background-position: -490px -1760px !important;
+}
+.shortcut-rs-drought-query {
+    background-position: -90px -990px !important;
+}
+
+/*汇集上报*/
+.shortcut-provincial-danger-report {
+    background-position: -570px -10px !important;
+}
+.shortcut-provincial-drought-report {
+    background-position: -570px -80px !important;
+}
+.shortcut-provincial-flood-area {
+    background-position: -570px -150px !important;
+}
+.shortcut-provincial-flood-control {
+    background-position: -570px -220px !important;
+}
+.shortcut-provincial-flood-report {
+    background-position: -570px -290px !important;
+}
+.shortcut-provincial-general-report {
+    background-position: -570px -360px !important;
+}
+.shortcut-provincial-material-report {
+    background-position: -570px -430px !important;
+}
+.shortcut-county-flood-area {
+    background-position: -90px -1270px !important;
+}
+
+/* 插件图标  */
+.plugin-duty {
+    background-position: -5px -5px !important;
+}
+.plugin-radar {
+    background-position: -5px -75px !important;
+}
+.plugin-rain {
+    background-position: -5px -145px !important;
+}
+.plugin-report {
+    background-position: -5px -215px !important;
+}
+.plugin-typhoon {
+    background-position: -5px -285px !important;
+}
+.plugin-warn {
+    background-position: -5px -355px !important;
+}
+.plugin-water {
+    background-position: -5px -425px !important;
+}
+.plugin-weather {
+    background-position: -5px -495px !important;
+}

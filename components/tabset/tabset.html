@@ -1,0 +1,13 @@
+<div>
+    <ul v-el:tab-header class="nav nav-tabs">
+        <li v-for="r in renderData" :class="{'active': $index === activeIndex, 'disabled': r.disabled}"
+            @click.prevent="handleTabListClick($index, r)"
+            :disabled="r.disabled"
+        >
+            <a href="#">{{r.header}}</a>
+        </li>
+    </ul>
+    <div v-el:tab-content class="tab-content" :style="{height: contentHeight}">
+        <slot></slot>
+    </div>
+</div>

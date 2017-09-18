@@ -1,0 +1,43 @@
+<div class="dropdown vue-select" :class="dropdownClasses">
+    <div v-el:toggle @mousedown.prevent="toggleDropdown" class="dropdown-toggle clearfix" type="button">
+        <span class="form-control" v-if="!searchable && isValueEmpty">
+          {{ placeholder }}
+        </span>
+
+        <span class="selected-tag" v-for="option in valueAsArray">
+          {{ getOptionLabel(option) }}
+          <button v-if="multiple" @click="select(option)" type="button" class="close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </span>
+
+        <input
+          v-el:search
+          v-show="searchable"
+          v-model="search"
+          @keyup.delete="maybeDeleteValue"
+          @keyup.esc="onEscape"
+          @keyup.up.prevent="typeAheadUp"
+          @keyup.down.prevent="typeAheadDown"
+          @keyup.enter.prevent="typeAheadSelect"
+          @blur="open = false"
+          @focus="open = true"
+          type="search"
+          class="form-control"
+          :placeholder="searchPlaceholder"
+          :style="{ width: isValueEmpty ? '100%' : 'auto' }"
+        >
+
+        <i v-el:open-indicator role="presentation" class="open-indicator glyphicon-chevron-down glyphicon"></i>
+    </div>
+
+    <ul v-show="open" v-el:dropdown-menu :transition="transition" :style="{ 'max-height': maxHeight }" class="dropdown-menu animated">
+      <li v-for="option in filteredOptions" :class="{ active: isOptionSelected(option), highlight: $index === typeAheadPointer }" @mouseover="typeAheadPointer = $index">
+        <a @mousedown.prevent="select(option)">
+          {{ getOptionLabel(option) }}
+        </a>
+      </li>
+      <li transition="fade" v-if="!filteredOptions.length" class="divider"></li>
+      <li transition="fade" v-if="!filteredOptions.length" class="text-center">没有匹配项</li>
+    </ul>
+  </div>

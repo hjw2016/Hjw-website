@@ -1,0 +1,60 @@
+<div class="container-fluid bar-container">
+    <div class="row">
+        <div class="col-main">
+            <div class="inner-container" v-el:container>
+                <ul v-sortable="shortcutSortHandle" class="list-inline text-center" v-el:list :style="{left: -offsetLeft + 'px'}">
+                    <li v-for="shortcut in shortcuts" class="shortcut" :title="shortcut.name">
+                        <a v-if="shortcut.type !== '300'" v-link="{path: shortcut.link}" class="shortcut-icon" :class="shortcut.icon"></a>
+                        <a v-else class="shortcut-icon" :class="shortcut.icon" :href="shortcut.component" target="_blank;"></a>
+                        <span>{{shortcut.name}}</span>
+                    </li>
+                </ul>
+                <a class="bar-control prev-arrow" @click="prev" :class="prevHiddenClass" role="button">
+                    <i class="glyphicon glyphicon-chevron-left"></i>
+                </a>
+                <a class="bar-control next-arrow" @click="next" :class="nextHiddenClass" role="button">
+                    <i class="glyphicon glyphicon-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+        <div class="col-side text-center" @click="showModal">
+            <a class="btn btn-info btn-block" role="button">
+                <i class="glyphicon glyphicon-plus"></i>
+            </a>
+            <span>添加</span>
+        </div>
+    </div>
+    <modal v-ref:modal effect="zoom" title="插件设置" :width="560" class="plugin-setting-modal" :cancel-callback="cancelCallback" :ok-callback="okCallback"> 
+        <div slot="modal-body" class="modal-body">
+            <div class="row text-center" style="margin-bottom: 15px;">
+                <radio-group :value.sync="settingMode" class="btn-group-sm">
+                    <radio-btn value="shortcut" checked>快捷入口</radio-btn>
+                    <radio-btn value="plugin">通知插件</radio-btn>
+                </radio-group>
+            </div>
+            <div class="row" v-show="settingMode == 'shortcut'">
+                <div class="shortcut-container">
+                    <div class="shortcut-inner-container">
+                        <div v-for="item in leafOfCategory" :title="item.name" class="pull-left text-center" style="margin: 0 15px;">
+                            <input type="checkbox" :value="item.id" v-model="tempShortcuts" :id="'scheckbox' + $index">
+                            <label :class="item.icon" :for="'scheckbox' + $index"></label>
+                            <span>{{item.name}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="shortcut-category">
+                    <ul class="list-group text-center" style="margin-bottom: 0;">
+                        <li v-for="item in totalShortcuts" class="list-group-item" :class="{active: $index === activeCategoryIndex}" @click="activeCategoryIndex = $index">{{item.name}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row" v-show="settingMode == 'plugin'">
+                <div v-for="item in totalPlugins" :title="item.name" class="plugin-container pull-left text-center" style="margin: 0 15px;">
+                    <input type="checkbox" :value="item.value" v-model="tempPlugins" :id="'pcheckbox' + $index">
+                    <label :class="item.icon" :for="'pcheckbox' + $index"></label>
+                    <span>{{item.name}}</span>
+                </div>
+            </div>
+        </div>
+    </modal>
+</div>

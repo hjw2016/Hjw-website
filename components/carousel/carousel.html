@@ -1,0 +1,9 @@
+<div class="carousel slide vertical">
+    <ol class="carousel-indicators" v-show="indicators" :style="{marginTop: (-indicator.length * 10) + 'px'}">
+        <li v-for="i in indicator" @click="handleIndicatorClick($index)" :class="{'active': $index == activeIndex}">
+        </li>
+    </ol>
+    <div class="carousel-inner" v-el:slides>
+        <slot></slot>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="legend-wrapper">
+    <section class="legend-header" @click="toggleExpand">
+        <i class="glyphicon" :class="{
+            'glyphicon-chevron-down': isExpand,
+            'glyphicon-chevron-up': !isExpand
+        }"></i>
+        {{header}}
+    </section>
+    <section class="legend-content" v-show="isExpand" transition="collapse">
+        <div class="legend-body">
+            <slot></slot>
+        </div>
+    </section>
+    <style>
+        .legend-header {
+            height: 30px;
+            line-height: 30px;
+            padding: 0 10px;
+            border-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            color: #fff;
+            background-color: #005bac;
+            cursor: pointer;
+        }
+        .legend-content {
+            background: #fff;
+            border-bottom-right-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        .collapse-transition {
+            -webkit-transition: max-height .5s ease;
+            -moz-transition: max-height .5s ease;
+            transition: max-height .5s ease;
+            overflow: hidden;
+        }
+        
+        .collapse-enter,
+        .collapse-leave {
+            max-height: 0 !important;
+        }
+    </style>
+</div>

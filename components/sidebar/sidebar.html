@@ -1,0 +1,23 @@
+<div class="sidebar"
+    :style="{width: sidebarWidth}"
+    :class="asideClass"
+>
+    <div class="sidebar-toggle" @click="toggle">
+        <span class="glyphicon" :class="arrowClass"></span>
+    </div>
+    <div class="sidebar-content">
+        <div v-el:header class="sidebar-header" v-show="hasHeader">
+            <slot name="header">
+                <h4 class="sidebar-title">
+                    {{header}}
+                </h4>
+            </slot>
+        </div>
+        <div class="sidebar-body" :style="{height: bodyHeight + 'px'}">
+            <slot></slot>
+        </div>
+        <div v-el:footer class="sidebar-footer">
+            <slot name="footer"></slot>
+        </div>
+    </div>
+</div>

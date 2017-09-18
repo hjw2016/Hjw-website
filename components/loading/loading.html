@@ -1,0 +1,18 @@
+<div class="loading-container" v-show="show">
+    <img :src="loadingImg" alt="loading...">
+    <style>
+        .loading-container {
+            position: absolute;
+            z-index: 9999;
+            background: #fff;
+            opacity: .75;
+        }
+        .loading-container img{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -26px;
+            margin-top: -26px;
+        }
+    </style>
+</div>

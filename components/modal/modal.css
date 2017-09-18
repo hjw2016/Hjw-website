@@ -1,0 +1,52 @@
+.modal {
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.modal.in {
+    background: rgba(0, 0, 0, .5);
+}
+.modal .modal-dialog {
+    margin: 100px auto;
+}
+.modal.zoom .modal-dialog {
+    top: 300px;
+    opacity: 0;
+    -webkit-transform: scale(.1);
+    -moz-transform: scale(.1);
+    transform: scale(.1);
+    -webkit-transition: all .3s ease;
+    -moz-transition: all .3s ease;
+    transition: all .3s ease;
+}
+.modal.modal.zoom.in .modal-dialog {
+    opacity: 1;
+    -webkit-transform: scale(1) translateY(-300px);
+    -moz-transform: scale(1) translateY(-300px);
+    transform: scale(1) translateY(-300px);
+}
+
+.modal .modal-header {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+.modal.type-info .modal-header {
+    background-color: #5bc0de;
+    color: white;
+}
+.modal.type-primary .modal-header {
+    background-color: #337ab7;
+    color: white;
+}
+.modal.type-success .modal-header {
+    background-color: #5cb85c;
+    color: white;
+}
+.modal.type-warning .modal-header {
+    background-color: #f0ad4e;
+    color: white;
+}
+.modal.type-danger .modal-header {
+    background-color: #d9534f;
+    color: white;
+}

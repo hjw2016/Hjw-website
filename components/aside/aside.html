@@ -1,0 +1,24 @@
+<div class="aside"
+    :class="{
+        'left': placement === 'left',
+        'right': placement === 'right'
+    }"
+    :style="{'width': asideWidth}"
+    v-show="show"
+>
+    <div class="aside-dialog">
+        <div v-el:header class="aside-header bg-info">
+            <button v-if="closable" type="button" class="close" @click="close">
+                <span>&times;</span>
+            </button>
+            <h5 class="aside-title">
+                <slot name="header">
+                    {{header}}
+                </slot>
+            </h5>
+        </div>
+        <div class="aside-body" :style="{height: bodyHeight}">
+            <slot></slot>
+        </div>
+    </div>
+</div>

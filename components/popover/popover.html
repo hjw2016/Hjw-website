@@ -1,0 +1,23 @@
+<slot name="trigger"></slot>
+<div class="popover" :class="{
+    'top': placement === 'top',
+    'bottom': placement === 'bottom',
+    'left': placement === 'left',
+    'right': placement === 'right'
+}"
+:style="{
+    'top': position.top + 'px',
+    'left': position.left + 'px'
+}"
+v-el:popover
+v-show="show"
+:transition="effect"
+>
+    <div class="arrow"></div>
+    <slot name="header">
+        <h3 class="popover-title" v-if="header">{{title}}</h3>
+    </slot>
+    <div class="popover-content">
+        <slot></slot>
+    </div>
+</div>

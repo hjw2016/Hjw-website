@@ -1,0 +1,17 @@
+.nav.nav-tabs {
+    padding: 5px 15px 0;
+}
+
+.tab-content > .tab-pane {
+    display: block;
+}
+
+.fade-transition {
+    -webkit-transition: opacity .5s ease;
+    -moz-transition: opacity .5s ease;
+    transition: opacity .5s ease;
+}
+.fade-enter,
+.fade-leave {
+    opacity: 0;
+}

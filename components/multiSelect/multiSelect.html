@@ -1,0 +1,23 @@
+<div class="btn-group" :class="{open: show}">
+    <button v-el:btn type="button" class="btn btn-default dropdown-toggle" @click="toggleDropdown" @blur="show = (search ? show : false)"
+        :disabled="disabled">
+      <span class="btn-placeholder" v-show="showPlaceholder">{{placeholder}}</span>
+      <span class="btn-content">{{ selectedItemLabels }}</span>
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <template v-if="options.length">
+            <li v-if="search" class="bs-searchbox">
+                <input type="text" placeholder="Search" v-model="searchText" class="form-control" autocomplete="off">
+            </li>
+            <li v-for="option in options | filterBy searchText " :id="option.value" style="position:relative">
+                <a @mousedown.prevent="select(option.value)" style="cursor:pointer">
+                    {{ option.label }}
+                    <span class="glyphicon glyphicon-ok check-mark" v-show="value.indexOf(option.value) !== -1"></span>
+                </a>
+            </li>
+        </template>
+        <div class="notify" v-show="showMinNotify" transition="fadein">至少需要选择{{minLimit}}项</div>
+        <div class="notify" v-show="showMaxNotify" transition="fadein">已达到最多{{maxLimit}}项</div>
+    </ul>
+</div>

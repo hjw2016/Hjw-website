@@ -1,0 +1,19 @@
+<div class="notification-container" v-if="show">
+    <div class="content slide-in-down animation">
+        <div class="content-body">
+            <div :class="{
+                'alert': true,
+                'alert-success': (type === 'success'),
+                'alert-info': (type === 'info'),
+                'alert-danger': (type === 'error')
+            }"
+            role="alert"
+            >
+                <button class="close" type="button" v-if="dismissable" @click="close">
+                    <span>&times;</span>
+                </button>
+                <slot></slot>
+            </div>
+        </div>
+    </div>
+</div>
