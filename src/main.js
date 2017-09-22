@@ -29,7 +29,8 @@ MenuRoute( data => {
 	});
 
 	var router = new Router({
-		mode:'history',
+		hashbang: true,
+		history: false,
 		routes: data
 	});
 
